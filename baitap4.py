@@ -1,8 +1,16 @@
-# BAI 4
-#X số tiền muốn đổi
-#T tỉ giá
-#Y số tiền sau khi đổi
-X = int(input("số tiền bạn muốn đổi là :"))
-T = 24500
-Y =  ( X * T)
-print(f"số tiền {X} USD của bạn sau khi đổi sang VND sẽ là {Y} VND")
+def la_so_nguyen_to(x):
+    if x < 2:
+        return False
+    for i in range(2, int(x**0.5) + 1):
+        if x % i == 0:
+            return False
+    return True
+
+# Nhập số nguyên n
+n = int(input("Nhập số nguyên n: "))
+
+# Tìm và in các số nguyên tố nhỏ hơn n
+print(f"Các số nguyên tố nhỏ hơn {n} là:")
+for i in range(2, n):
+    if la_so_nguyen_to(i):
+        print(i, end=" ")
